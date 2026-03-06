@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dynamic QR Code Generator</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 class="title">Dynamic QR Code Generator</h1>
+
+<p class="subtitle">Day 1 – 7 Days 7 Projects Challenge</p>
+
+<p class="tagline">Create customizable QR codes instantly</p>
+
+<div class="card">
+
+<p class="heading">Create Your QR</p>
+
+<input type="text" id="qrText" placeholder="Enter URL or Text">
+
+<label>QR Color</label>
+<input type="color" id="qrColor" value="#DE89BE">
+
+<label>QR Size</label>
+<input type="range" id="qrSize" min="150" max="300" value="200">
+
+<button onclick="generateQR()">Generate QR</button>
+
+<div id="qrWrapper">
+<div id="qrCode"></div>
+</div>
+
+<button id="downloadBtn">Download QR</button>
+
+</div>
+
+<footer>
+© 2026 Apoorv Khobragade | Day 1 – 7 Days 7 Projects
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
