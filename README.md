@@ -30,13 +30,18 @@ This project is part of my **"7 Days – 7 Mini Projects Challenge"**, where I b
 
 ## Live Demo
 
-[Live Demo Link](#)
+[Live Demo Link](https://dynaqr-generator.netlify.app/)
 
 ---
 
 ## Screenshots
 
-(Add project screenshots here)
+<img width="1346" height="612" alt="image" src="https://github.com/user-attachments/assets/0981aaa6-21dd-4378-a8e3-7c8fb2ad8b42" />
+<img width="1347" height="617" alt="image" src="https://github.com/user-attachments/assets/76a5d38c-d990-458b-83d3-2d23046d7647" />
+<img width="1354" height="612" alt="image" src="https://github.com/user-attachments/assets/68f7aabf-2d95-4e21-b231-3c0bb50bf3bf" />
+
+
+
 
 ---
 
