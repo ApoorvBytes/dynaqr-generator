@@ -1,63 +1,88 @@
-# Dynamic QR Code Generator
+# QR Studio
 
-A modern and customizable QR Code Generator built using **HTML, CSS, and JavaScript**.  
-This tool allows users to instantly generate QR codes for URLs or text with customizable color and size options.
+> Create sharp, customizable QR codes in seconds.
 
-This project is part of my **"7 Days – 7 Mini Projects Challenge"**, where I build and share one project every day to improve my development skills and build in public.
+QR Studio is a lightweight QR code generator built with vanilla HTML, CSS, and JavaScript. Enter a URL or message, customize the look, and download or copy a ready-to-share QR code — no account or build step required.
 
----
+### [Live Demo](https://dynaqr-generator.netlify.app/) · [Repository](https://github.com/ApoorvBytes/dynaqr-generator)
 
-## Features
+![QR Studio preview](https://github.com/user-attachments/assets/0981aaa6-21dd-4378-a8e3-7c8fb2ad8b42)
 
-- Generate QR codes for any text or URL
-- Custom QR color selection
-- Adjustable QR size using slider
-- Instant QR preview
-- Download QR code as PNG
-- Modern UI with glassmorphism design
-- Animated gradient background
+## Highlights
 
----
+- Generate QR codes for links, text, messages, and more
+- Live preview with high error correction for reliable scanning
+- Customize QR color, background color, and size
+- Download QR codes as PNG files
+- Copy the generated QR image directly to the clipboard
+- Quick-start examples for a website or message
+- Recent codes saved locally in the browser for easy reuse
+- Dark and light themes with a responsive mobile layout
+- Character counter, reset controls, validation, and helpful empty states
+- Private by design: content stays in the browser
 
-## Tech Stack
+## Built with
 
-- HTML5
-- CSS3
-- JavaScript
-- QRCode.js Library
+- **HTML5** — semantic structure and accessible controls
+- **CSS3** — responsive layout, theme variables, glass panels, and visual states
+- **JavaScript** — QR generation, downloads, clipboard actions, history, and theme persistence
+- **[QRCode.js](https://github.com/davidshimjs/qrcodejs)** — client-side QR rendering
 
----
+## Getting started
 
-## Live Demo
+QR Studio is a static project, so no package manager or build process is needed.
 
-[Live Demo Link](https://dynaqr-generator.netlify.app/)
+### Run locally
 
----
+1. Clone the repository:
 
-## Screenshots
+   ```bash
+   git clone https://github.com/ApoorvBytes/dynaqr-generator.git
+   cd dynaqr-generator
+   ```
 
-<img width="1346" height="612" alt="image" src="https://github.com/user-attachments/assets/0981aaa6-21dd-4378-a8e3-7c8fb2ad8b42" />
-<img width="1347" height="617" alt="image" src="https://github.com/user-attachments/assets/76a5d38c-d990-458b-83d3-2d23046d7647" />
-<img width="1354" height="612" alt="image" src="https://github.com/user-attachments/assets/68f7aabf-2d95-4e21-b231-3c0bb50bf3bf" />
+2. Start a local server. For example, with Python:
 
+   ```bash
+   python -m http.server 8000
+   ```
 
+3. Open [http://localhost:8000](http://localhost:8000) in your browser.
 
+You can also open `index.html` directly, although a local server is recommended for the clipboard feature.
 
----
+## How to use
 
-## Project Goal
+1. Enter a URL or any text in the content field.
+2. Choose the QR color, background, and size.
+3. Select **Generate QR code** or press `Ctrl + Enter`.
+4. Copy the QR image or download it as a PNG.
+5. Reuse previous codes from the **Recent codes** section.
 
-The goal of this project was to create a **simple yet practical developer tool** while focusing on:
+## Project structure
 
-- Clean UI design
-- Interactive user experience
-- Dynamic JavaScript functionality
-- Practical real-world use cases
+```text
+qr-code-generator/
+├── index.html     # App structure and accessible UI
+├── style.css      # Layout, themes, responsive styling
+├── script.js      # QR generation and app interactions
+└── README.md      # Project documentation
+```
 
----
+## Privacy
+
+QR content is processed in the browser. Recent codes and theme preferences use `localStorage` on your device; no project backend or account is required.
+
+## Part of a challenge
+
+This project was created for the **7 Days · 7 Projects Challenge** — a build-in-public challenge focused on shipping small, practical projects and improving frontend development skills.
 
 ## Author
 
 **Apoorv Khobragade**
 
-Part of the **7 Days – 7 Projects Challenge**
+- GitHub: [@ApoorvBytes](https://github.com/ApoorvBytes)
+
+## License
+
+This project is open source and available under the [MIT License](https://opensource.org/licenses/MIT).
