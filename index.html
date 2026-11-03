@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17151f">
+  <meta name="description" content="Create beautiful, customizable QR codes in seconds.">
+  <title>QR Studio — Create QR codes beautifully</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app-shell">
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="QR Studio home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span>QR<span class="brand-accent">Studio</span></span>
+      </a>
+      <div class="header-actions">
+        <span class="status-pill"><span class="status-dot"></span>Ready to create</span>
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Switch to light theme" title="Toggle theme">☼</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="pageTitle">
+        <div class="eyebrow"><span></span> SIMPLE. SHARP. SHAREABLE.</div>
+        <h1 id="pageTitle">Turn ideas into<br><em>scannable moments.</em></h1>
+        <p class="hero-copy">Create a QR code that looks as good as the destination it leads to. Free, fast, and ready to share.</p>
+      </section>
+
+      <section class="workspace" aria-label="QR code generator">
+        <div class="panel settings-panel">
+          <div class="panel-heading">
+            <div>
+              <span class="step-label">01 / CONTENT</span>
+              <h2>What should it say?</h2>
+            </div>
+            <span class="keyboard-hint">Ctrl ↵</span>
+          </div>
+
+          <form id="qrForm">
+            <label class="field-label" for="qrText">Your link or text</label>
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">↗</span>
+              <textarea id="qrText" rows="3" placeholder="https://yourwebsite.com" maxlength="1200" required></textarea>
+              <span class="character-count" id="characterCount">0 / 1200</span>
+            </div>
+
+            <div class="examples" aria-label="Quick examples">
+              <span>Try an example:</span>
+              <button type="button" class="text-button" data-example="https://qrstudio.example.com">Website</button>
+              <button type="button" class="text-button" data-example="Thanks for stopping by! ✨">Message</button>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="panel-heading compact">
+              <div>
+                <span class="step-label">02 / STYLE</span>
+                <h2>Make it yours</h2>
+              </div>
+            </div>
+
+            <div class="color-grid">
+              <div class="color-field">
+                <label class="field-label" for="qrColor">Code color</label>
+                <div class="color-input-wrap">
+                  <input type="color" id="qrColor" value="#7c5cff" aria-label="Choose QR code color">
+                  <span id="qrColorValue">#7C5CFF</span>
+                </div>
+              </div>
+              <div class="color-field">
+                <label class="field-label" for="backgroundColor">Background</label>
+                <div class="color-input-wrap">
+                  <input type="color" id="backgroundColor" value="#ffffff" aria-label="Choose QR background color">
+                  <span id="backgroundColorValue">#FFFFFF</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="range-row">
+              <div class="range-label"><label class="field-label" for="qrSize">Size</label><output id="sizeValue" for="qrSize">240 px</output></div>
+              <input type="range" id="qrSize" min="160" max="360" value="240" step="10">
+              <div class="range-scale"><span>Small</span><span>Large</span></div>
+            </div>
+
+            <div class="button-row">
+              <button class="primary-button" type="submit"><span>Generate QR code</span><span class="button-arrow">↗</span></button>
+              <button class="secondary-button" type="button" id="resetBtn">Reset</button>
+            </div>
+            <p class="form-message" id="formMessage" role="alert"></p>
+          </form>
+        </div>
+
+        <div class="panel preview-panel">
+          <div class="preview-topline"><span class="step-label">03 / PREVIEW</span><span class="live-label"><span></span>Live preview</span></div>
+          <div class="preview-stage" id="previewStage">
+            <div class="empty-state" id="emptyState">
+              <div class="empty-icon" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+              <h3>Your QR code will appear here</h3>
+              <p>Enter some content and hit generate to see the magic.</p>
+            </div>
+            <div id="qrWrapper" class="qr-wrapper" hidden>
+              <div id="qrCode" aria-label="Generated QR code"></div>
+              <span class="scan-corner corner-tl"></span><span class="scan-corner corner-tr"></span><span class="scan-corner corner-bl"></span><span class="scan-corner corner-br"></span>
+            </div>
+          </div>
+          <div class="preview-footer">
+            <div class="preview-meta" aria-live="polite"><span class="meta-icon">✓</span><span id="previewStatus">Waiting for your content</span></div>
+            <div class="preview-actions">
+              <button class="action-button" type="button" id="copyBtn" disabled><span>▣</span> Copy</button>
+              <button class="action-button download-action" type="button" id="downloadBtn" disabled><span>↓</span> Download</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="history-section" id="historySection" hidden>
+        <div class="section-heading"><div><span class="step-label">YOUR CREATIONS</span><h2>Recent codes</h2></div><button type="button" id="clearHistory" class="text-button">Clear history</button></div>
+        <div class="history-grid" id="historyGrid"></div>
+      </section>
+
+      <section class="trust-row" aria-label="Benefits">
+        <div><span class="trust-icon">✦</span><div><strong>Always free</strong><small>No sign-up or limits</small></div></div>
+        <div><span class="trust-icon">⌁</span><div><strong>Private by design</strong><small>Your data stays in your browser</small></div></div>
+        <div><span class="trust-icon">↯</span><div><strong>Instant results</strong><small>Generate in one click</small></div></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>QR Studio</span><span>Made for the 7 Days · 7 Projects challenge</span><span>© 2026</span></footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
